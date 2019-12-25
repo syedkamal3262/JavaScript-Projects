@@ -1,0 +1,142 @@
+<!---- ## JS chapter 31 to 34
+Java-script assignments chapter 31 to 34
+<!--1. input your name through prompt. 		
+``` for example name is  "Ameen Alam" ```
+2. input your DOB(date) through prompt. 	
+``` for example date is  "24" ```
+3. input your DOB(month) through prompt.	
+``` for example month is  "05" ```
+4. input your DOB(year) through prompt. 	
+``` for example year is  "1999" ``
+<!-- 5. print meassage in alert()
+   ``` "Hello Ameen Alam, Good Morning, AfterNoon, Evening or Night" ```
+<!-- 6. print meassage in alert()
+   ``` "Your DOB is {in pakistan standard time format}" ```
+<!-- 7. print meassage in alert()
+   ``` "You are 20 years 7 Month 10 Days 19 Hours 20 Minutes 25 Seconds old" ```
+   ``` "Your Age in Days 7510" ```
+<!--  8. print meassage in alert()
+   ``` "How much time left in your next birthday? 161 days 4 hours 39 minutes 34 seconds" ```
+    or
+   ``` "happy Birth Day Ameen Alam.  Today is Your 20th Birthday" ``` -->
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    
+</body>
+</html>
+<script>
+function months(a){
+var monthsName=["","January","Februray","March","April","May","June","July","August","September","October","November","December"];
+return monthsName[a];
+}
+function time(check){
+if(check >=6 && check<12 ){
+	return "Morning";
+}
+else if(check >=12 && check<16){
+	return "Afternoon";
+}
+else if(check >= 16 && check<20){
+	return "Evening";
+}
+else if(check >= 20){
+	return "Night";
+}
+else{
+	return "Invalid Answer";
+}
+}
+
+function checkLeap(Year){
+if (Year % 4 === 0){
+   daysInYear =366;    
+   return  daysInYear;
+}
+else {
+    daysInYear = 365;
+    return daysInYear;
+}
+}
+var checkMonths = function(month){
+    if(month <= 31)
+    {
+        return month;
+    }
+    else{
+       month=  Math.round(month % 31);
+        return month;
+    }
+}
+function negCheck(integer){
+  var num =Math.sign(integer);
+     if(num === -0 || num === -1){
+        integer = integer * -1;
+        return integer ;
+    }
+    else{
+        return integer ;
+    }
+}
+var userName=prompt("Enter Your Name");
+var getDay = prompt("Enter your Day Of Birth");
+var getMonth = parseInt(prompt("Enter your Month of birth"));
+var getYear= prompt("Enter your Year of Birth");
+var birthDate =new Date(months(getMonth)+getDay+","+getYear);
+var newDate= new Date();
+var currentTime =newDate.getHours();
+var ageDiff = newDate.getTime() - birthDate.getTime();
+
+/*------------------------Cuurent Age------------------------------------*/
+var ageInYears =Math.round( newDate.getYear()- birthDate.getYear() );
+var ageInMonths =Math.round( newDate.getMonth()- birthDate.getMonth() );
+var ageInDays =Math.round ( newDate.getDay()- birthDate.getDay() );
+var ageInHours =Math.round ( newDate.getHours()- birthDate.getHours() );
+var ageInMinutes =Math.round( newDate.getMinutes()- birthDate.getMinutes() );
+
+alert(
+`Hello ${userName} 
+Good ${time(currentTime)}
+You lived 
+${ageInYears } Years 
+${ageInMonths} Months 
+${ageInDays} Days 
+${ ageInHours} Hours
+${ageInMinutes} Minutes`);
+
+/*------------------------Upcomming Birthday-----------------------------*/    
+var newYear = newDate.getFullYear();
+var upYear = (newYear+1).toString();
+var birthDay=new Date(months(getMonth)+getDay+","+upYear);
+var upDiff=  birthDay.getTime() - newDate.getTime() ;
+var upMonths = Math.floor(upDiff/ 2628336213.69853735); 
+var upDays = Math.floor (upDiff/ 86410958.904106542468);
+var upHours = Math.floor (upDiff/ 3600456.6210044394247);
+var upMinutes =Math.floor(upDiff/ 60007.610350073991867 );
+
+var remDays = Math.round((upMonths - upDiff/ 2628336213.69853735 ) *30.4167);
+remDays = negCheck(remDays)  ;
+    
+var remHours=Math.floor(( upDays -(upDiff/ 86410958.904106542468) ) * 24);
+remHours =  negCheck(remHours) ;
+
+var remMinutes=Math.floor(( upHours - upDiff/3600456.6210044394247 ) * 60);
+remMinutes =  negCheck(remMinutes)  ;
+    
+
+alert(`Time remaining in your Next Birthday is 
+${upMonths} Months 
+${remDays} Days 
+${remHours} Hours
+${remMinutes} Minutes 
+Happy Birthday in Advance`);
+
+
+</script>

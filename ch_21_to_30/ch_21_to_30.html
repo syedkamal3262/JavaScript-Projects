@@ -1,0 +1,32 @@
+<!--## JS chapter 21 to 30
+Java-script assignments chapter 21 to 30
+
+1. Take a input from user in number with decimal point ``` user input is 3.4```
+2. Convert it into greater number ```Example: Math.ceil(3.4); to 4```
+3. Declear a variable of string and assign some text ``` var text="This is my dummy text" ```
+4. Slice the text into a new variable from 0 to the rounded number ```0 to 4;  Example: text.slice(0, 4)``` | ``` sliceText = This ```
+5. Use for loop and concatination to reverse the sliced string; ```0==>4 ==> This ===> shiT ```
+6. print value in alert ``` "shiT" ```-->
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    
+</body>
+</html>
+<script>
+var user_input_number= parseFloat(prompt("Enter Decimal Number = ","like 3.4")); 
+user_input_number= Math.ceil(user_input_number);
+var str_text= ("This is my dummy test"); 
+var new_str = str_text.slice(0,user_input_number); 
+for(var i=new_str.length; i>-1 ;i--)
+{ 
+console.log( new_str[i]); 
+}
+</script>

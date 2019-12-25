@@ -1,0 +1,48 @@
+<!--## JS chapter 10 to 14
+Java-script assignments chapter 10 to 14
+
+#### Make a Calculator
+1. input a value from user ```for example num1 is 7```
+1. input a second value from user ```for example num2 is 3```
+3. input a third value from user ```for example sign is "+" or "-" or "*" or "/" or "%"```
+4. print operation in alert() ```7-3 =4, or 7*3 =21, or 7/3 =2.3, or 7+3 =10 or 7%3 =1``` -->
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    
+</body>
+</html>
+<script>
+var value1 = parseInt(prompt( "Enter first Number"));
+var value2 =  parseInt(prompt("Enter Second Number"));
+var value3 = prompt("Enter sign");
+if(value3 == "+"){
+    var add = value1 + value2 ;
+    alert("Answer is = " +add);
+}
+else if(value3 == "-"){
+    var sub = value1 - value2 ;
+    alert("Answer is = " +sub);
+}
+else if(value3 == "*"){
+    var mul = value1 * value2 ;
+    alert("Answer is = " +mul);
+}
+else if(value3 == "/"){
+    var div = value1 / value2 ;
+    alert("Answer is = " +div);
+}
+else if(value3 == "%"){
+    var mod = value1 % value2 ;
+    alert("Answer is = " +mod);
+}
+else{
+alert("Wrong Sign = ");
+}
+</script>

@@ -1,0 +1,57 @@
+<!--## JS chapter 39 to 42
+Java-script assignments chapter 39 to 42
+ Make a Percentage Calculator
+--->
+
+<!-- 1. Get the 5-course number from the user```for example course1 is 70```
+var totalMarks = 500<script></script>
+2. Calculate the total percentage ``` formula:  obtainedMarks * 100/ totalMarks ```
+3. Calculate the grade ```use switch case```
+``` Grade A+ 90% to 100% , Grade A 75% to 89% , Grade B 60% to 74% , Grade C 45% to 60% , Grade D 30% to 44% Grade F 0% to 29%```
+4. print output in alert. -->
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    
+</body>
+</html>
+<script>
+var course1 = parseInt(prompt("Enter Course 1 marks"));
+var course2 = parseInt(prompt("Enter Course 2 marks"));
+var course3 = parseInt(prompt("Enter Course 3 marks"));
+var course4 = parseInt(prompt("Enter Course 4 marks"));
+var course5 = parseInt(prompt("Enter Course 5 marks"));
+var totalMarks =  course1 + course2 + course3 + course4 + course5;
+var percentage= Math.round((totalMarks/500) *100);
+var grade= null;
+    
+switch(true){
+    case percentage >= 90 :
+    grade="A+";
+    break;
+    case percentage >= 75 :
+    grade="A";
+    break;
+    case percentage >= 60 :
+    grade="B";
+    break;
+    case percentage >= 45 :
+    grade="C";
+    break;
+    case percentage >= 30 :
+    grade="D";
+    break;
+    case percentage >= 0 :
+    grade="F";
+    break;
+}
+alert(" Your Grade is "+grade );
+
+</script>

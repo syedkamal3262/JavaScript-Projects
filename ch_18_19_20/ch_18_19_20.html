@@ -1,0 +1,35 @@
+<!--## JS chapter 18 19 20
+Java-script assignments chapter 18 19 20
+
+#### Make a TODO
+Customize previous assignment "ch_15_16_17" with for loop...-->
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    
+</body>
+</html>
+<script>
+var courses =[];
+for(var i=0;i<5;i++){
+    var a = prompt("Enter Course "+i);
+    courses.push(a);
+
+}
+alert(courses);
+for(var i=0;i<5;i++){
+var a = prompt("your course is "+i+" "+courses[i],courses[i]);
+if(a !=null){
+    courses.splice(i,1,a);
+}
+}
+
+alert(courses);
+</script>
